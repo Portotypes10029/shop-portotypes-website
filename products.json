@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Team Sweatshirt Crew Neck",
+    "image": "/images/sweatshirt_crew_neck_sample.png",
+    "etsy": "https://www.etsy.com/listing/4417873984/standard-sized-team-10029-crew-neck?sr_prefetch=1&pf_from=shop_home&ref=shop_home_active_2&frs=1&crt=1&logging_key=8d2ab631313f713735bd31988db65373d2781d76%3A4417873984",
+    "price": "$14.95"
+  },
+  {
+    "title": "Custom Aluminum License Plate",
+    "image": "/images/license_plate_sample.png",
+    "etsy": "https://www.etsy.com/listing/4404319499/custom-aluminum-license-plate?sr_prefetch=1&pf_from=shop_home&ref=shop_home_active_5&logging_key=830ae5ab8a70a1ce55785342e96f672e806d6f11%3A4404319499",
+    "price": "$9.34"
+  },
+  {
+    "title": "Team Hoodie",
+    "image": "/images/hoodie_sample.png",
+    "etsy": "https://www.etsy.com/listing/4417745100/team-10029-standard-sized-hoodies-pickup?sr_prefetch=1&pf_from=shop_home&ref=shop_home_active_1&frs=1&crt=1&logging_key=a63d48c31bf4f15b85b3ad5e498c15fb9b67927d%3A4417745100",
+    "price": "$18.69"
+  }
+]

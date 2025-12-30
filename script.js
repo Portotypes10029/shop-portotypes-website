@@ -18,3 +18,36 @@ toggleBtn.addEventListener("click", () => {
     toggleBtn.textContent = "🌙";
   }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Burger menu toggle
+  document.getElementById("burger").addEventListener("click", function () {
+    const navMenu = document.getElementById("navMenu");
+    navMenu.classList.toggle("active");
+  });
+});
+
+
+fetch("/products.json")
+  .then(res => res.json())
+  .then(products => {
+    const grid = document.getElementById("products-grid");
+
+    products.forEach(prod => {
+      const card = document.createElement("div");
+      card.className = "product-card";
+
+      card.innerHTML = `
+        <img src="${prod.image}" alt="${prod.title}">
+        <h3>${prod.title}</h3>
+        <p>${prod.price}</p>
+      `;
+
+      // Redirect to Etsy on click
+      card.addEventListener("click", () => {
+        window.open(prod.etsy, "_blank");
+      });
+
+      grid.appendChild(card);
+    });
+  });
