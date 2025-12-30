@@ -329,8 +329,6 @@ footer {
   background: #ff4c4c;
 }
 
-
-
 /* Icon buttons */
 .social-icons a {
   display: flex;
@@ -357,13 +355,6 @@ footer {
   border-radius: 50%;
   display: block;
 }
-
-
-
-
-
-
-
 
 html {
   scroll-behavior: smooth;
