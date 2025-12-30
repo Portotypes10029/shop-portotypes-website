@@ -265,80 +265,91 @@ h2 {
 }
 
 
+
+
+
+
 /* Footer */
 footer {
   background: linear-gradient(to right, #111111, #000000);
   color: white;
   padding: 30px 20px;
   border-top: 4px solid var(--first-red);
-  border-top: 4px solid var(--first-red);
   text-align: center;
 }
 
 .footer-content {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  gap: 12px;
 }
-
+/* Footer text */
 .footer-content p {
-  flex: 1 0 100%;
+  margin: 0;
   text-align: center;
-  margin-bottom: 10px;
-  flex: 1 0 100%;
-  text-align: center;
-  margin-bottom: 10px;
 }
 
+.footer-content > .dark-toggle,
+.footer-content > .social-icons {
+  align-self: stretch;
+}
+
+/* Social icons row */
 .social-icons {
   display: flex;
-  justify-content: center; 
-  justify-content: center; 
+  align-items: center;
+  justify-content: center;
   gap: 16px;
-  flex: 1;
-  padding-left: 30px;
-
+  position: relative;
 }
 
+/* Dark mode toggle */
 .dark-toggle {
+  position: absolute;
+  left: 20px;
+  display: flex;                /* 🔑 fix */
+  align-items: center;          /* vertical centering */
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  line-height: 1;               /* remove text baseline shift */
+  padding: 0;                   /* prevent internal offset */
   background: var(--red);
   color: white;
   border: none;
   border-radius: 50%;
-  width: 36px;
-  height: 36px;
+  font-size: 18px;
   cursor: pointer;
-  font-size: 1rem;
-  transition: background 0.3s;
-  margin-left: 0;
-  margin-right: 16px;
+  z-index: 10;                  /* 🔑 THIS fixes the click issue */
+  transform: translateY(38px); /* 🔑 optical alignment */
 }
 
 .dark-toggle:hover {
   background: #ff4c4c;
 }
 
+
+
+/* Icon buttons */
 .social-icons a {
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 36px;
   height: 36px;
-  line-height: 36px;
   border-radius: 50%;
   background-color: var(--red);
   color: white;
-  text-align: center;
   text-decoration: none;
+  font-size: 18px;
 }
 
 .social-icons a:hover {
   background-color: #ED1B24;
 }
 
+/* Custom image icon */
 .social-icons a.custom-icon img {
   width: 36px;
   height: 36px;
@@ -346,6 +357,13 @@ footer {
   border-radius: 50%;
   display: block;
 }
+
+
+
+
+
+
+
 
 html {
   scroll-behavior: smooth;
@@ -414,33 +432,7 @@ html {
   }
 }
 
-.view-all-card {
-  background-color: var(--red);
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  text-align: center;
-  transition: background 0.3s;
-}
 
-.view-all-card a {
-  color: white;
-  text-decoration: none;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.view-all-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-}
 
 .view-all-card i {
   font-size: 1.8rem;
@@ -474,95 +466,6 @@ html {
 }
 .black-icon {
   background-color: #111111 !important; 
-}
-
-
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 16px;
-}
-.gallery-item {
-  text-align: center;
-}
-.gallery-item img {
-  width: 100%;
-  height: auto;
-  cursor: pointer;
-  border-radius: 8px;
-  transition: transform 0.3s;
-}
-.gallery-item img:hover {
-  transform: scale(1.02);
-}
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.9);
-}
-.modal-content {
-  margin: 5% auto;
-  display: block;
-  max-width: 90%;
-}
-.close {
-  position: absolute;
-  top: 20px;
-  right: 35px;
-  color: white;
-  font-size: 40px;
-  font-weight: bold;
-  cursor: pointer;
-}
-@media screen and (max-width: 700px) {
-  .modal-content {
-    width: 100%;
-  }
-}
-
-.slider {
-    position: relative;
-    width: 100%;
-    margin: auto;
-    overflow: hidden;
-}
-
-.slides img {
-    width: 100%;
-    display: none;
-}
-
-img.displaySlide {
-    display: block;
-    animation-name: fade;
-    animation-duration: 1.5s;
-}
-
-.slider button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 2rem;
-    padding: 10px 15px;
-    background-color: hsla(0, 0%, 0%, 0.5);
-    color: white;
-    border: none;
-    cursor: pointer;
-    z-index: 2;
-}
-
-.prev {
-    left: 0;
-}
-
-.next {
-    right: 0;
 }
 
 .cards-grid {
@@ -606,271 +509,6 @@ img.displaySlide {
   text-decoration: underline;
 }
 
-
-
-
-/* Calendar */
-#container {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  margin-top: 20px;
-}
-
-#calendar {
-  max-width: 600px;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  padding: 15px;
-}
-
-#calendar-header {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  font-weight: bold;
-  margin-bottom: 10px;
-  text-align: center;
-  color: #555;
-}
-
-/* Month & Year title */
-.calendar-title {
-  font-size: 1.25rem;         /* bigger font */
-  font-weight: 700;           /* bold */
-  color: var(--first-blue);   /* standout color */
-  text-align: center;
-  letter-spacing: 1px;
-  margin: 0 10px;
-}
-
-
-/* Day names underline */
-#calendar-header > div.day-name {
-  border-bottom: 2px solid #ccc;  
-  padding-bottom: 5px;
-  color: #555;
-  font-weight: 600;
-}
-
-#calendar-grid {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 5px;
-}
-
-.day {
-  padding: 10px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  text-align: center;
-  font-weight: 300;
-  transition: background-color 0.15s ease, transform 0.15s ease;
-  color: var(--day);
-  color: var(--day);
-}
-
-.day:hover {
-  background-color: #f0f0f0;
-  transform: translateY(-2px);
-}
-
-.day.event {
-  position: relative;
-  background-color: var(--first-blue); /* your color */
-  border: 1px solid var(--first-gray); 
-  font-weight: 300;
-  color: white;
-}
-
-.day.event::after {
-  content: "";
-  position: absolute;
-  bottom: 6px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 6px;
-  height: 6px;
-  background-color: var(--first-red); 
-  border-radius: 50%;
-}
-
-.day.event:hover {
-  background-color: var(--tba);
-  cursor: pointer;
-}
-
-.day.today {
-  border: 2px solid var(--first-gray-dark);
-  font-weight: 600;
-  background: var(--tba);
-  color: white;
-}
-
-#sidebar {
-  width: 280px;
-  text-align: left;
-  border-left: 2px solid #ccc;
-  padding-left: 15px;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  padding: 15px;
-}
-
-#sidebar-date {
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin-bottom: 10px;
-  color: #333;
-}
-
-#events {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  color: var(--first-gray-dark);
-}
-
-#events li {
-  background-color: var(--white);
-  border-left: 4px solid var(--first-red);
-  padding: 8px 10px;
-  margin-bottom: 8px;
-  border-radius: 4px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-  transition: transform 0.1s ease;
-}
-
-#events li:hover {
-  transform: translateX(2px);
-}
-
-.placeholder {
-  color: var(--first-gray-dark);
-  font-style: italic;
-  background: none;
-  border: none;
-  box-shadow: none;
-  padding-left: 0;
-}
-
-
-/* Mobile responsive layout */
-@media (max-width: 600px) {
-  #container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  #calendar {
-    max-width: 100%;
-  }
-
-  #sidebar {
-    width: 100%;
-    margin-top: 20px;
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-
-  #calendar-grid {
-    grid-template-columns: repeat(7, 1fr);
-    gap: 3px;
-  }
-
-  .day {
-    padding: 8px;
-    font-size: 0.9rem;
-
-  }
-
-  #sidebar-date {
-    font-size: 1.1rem;
-  }
-
-  #events li {
-    padding: 6px 8px;
-  }
-}
-
-/* Navigation Buttons inside header */
-#calendar-header button {
-  background-color: var(--first-blue);
-  color: white;
-  border: none;
-  border-radius: 6px;
-  padding: 8px 14px;
-  margin: 0 5px;
-  font-size: 0.95rem;
-  font-weight: 500;
-  cursor: pointer;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
-  transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
-}
-
-#calendar-header button:hover {
-  background-color: var(--tba);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
-
-#calendar-header button:active {
-  transform: translateY(0);
-  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
-}
-
-#calendar-header button:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.4);
-}
-
-
-
-
-/* Fundraisers Layout */
-.fundraiser-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
-  justify-items: center;
-  margin-top: 20px;
-}
-
-.fundraiser-card {
-  background: var(--white);
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  text-align: center;
-  width: 100%;
-  max-width: 320px;
-  transition: transform 0.15s ease;
-}
-
-.fundraiser-card:hover {
-  transform: translateY(-3px);
-}
-
-/* Logos */
-.fundraiser-logo {
-  width: 140px;
-  max-height: 110px;
-  object-fit: contain;
-  margin-bottom: 12px;
-}
-
-/* Headings & Text Colors */
-.fundraiser-card h3 {
-  color: #333 !important;
-  margin: 10px 0;
-}
-
-.fundraiser-card p {
-  color: var(--first-gray-dark);
-  margin: 6px 0;
-  font-size: 95%;
-}
 
 body.dark-mode .fundraiser-card {
   box-shadow: 0 2px 10px rgba(255,255,255,0.08);
@@ -947,25 +585,40 @@ body.dark-mode .fundraiser-card p {
 
 
 .products-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-  margin: 20px auto;
-  max-width: 1000px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 22px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+
+@media (max-width: 900px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 240px);
+  }
+}
+
+@media (max-width: 560px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .product-card {
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  background: var(--card-bg, #fff);
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
   overflow: hidden;
-  cursor: pointer;
-  text-align: center;
-  transition: transform 0.15s ease;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease;
+  width: 240px;
 }
 
 .product-card:hover {
-  transform: translateY(-3px);
+  transform: translateY(-4px);
 }
 
 .product-card img {
@@ -974,16 +627,51 @@ body.dark-mode .fundraiser-card p {
   object-fit: cover;
 }
 
-.product-card h3 {
-  margin: 10px 0 5px;
-  color: #555 !important;
+.product-content {
+  padding: 14px;
+  flex-grow: 1;
 }
 
-.product-card p {
+.product-content h3 {
+  margin: 5px 0;
+  color: #000000 !important;
+}
+
+.product-desc {
+  font-size: 0.9rem;
   color: #555 !important;
   margin-bottom: 10px;
-  font-weight: bold;
 }
 
+.product-price {
+  font-weight: bold;
+  margin-bottom: 12px;
+  color: #000000 !important;
+}
+
+.buy-btn {
+  margin-top: auto;
+  background: #f1641e;
+  color: white;
+  border: none;
+  padding: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.buy-btn:hover {
+  background: #d3541a;
+}
+
+/* Dark mode support */
+.dark-mode .product-card {
+  background: #fff;
+}
+
+.dark-mode .product-desc,
+.dark-mode .shop-subtitle {
+  color: #000;
+}
 
 

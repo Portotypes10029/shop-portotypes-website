@@ -1,20 +1,37 @@
 [
   {
-    "title": "Team Sweatshirt Crew Neck",
+    "title": "Standard Team Sweatshirt Crew Neck",
+    "description": "Standard Sized Team 10029 Crew Neck Sweatshirt - Pickup Only",
     "image": "/images/sweatshirt_crew_neck_sample.png",
     "etsy": "https://www.etsy.com/listing/4417873984/standard-sized-team-10029-crew-neck?sr_prefetch=1&pf_from=shop_home&ref=shop_home_active_2&frs=1&crt=1&logging_key=8d2ab631313f713735bd31988db65373d2781d76%3A4417873984",
     "price": "$14.95"
   },
   {
     "title": "Custom Aluminum License Plate",
+    "description": "",
     "image": "/images/license_plate_sample.png",
     "etsy": "https://www.etsy.com/listing/4404319499/custom-aluminum-license-plate?sr_prefetch=1&pf_from=shop_home&ref=shop_home_active_5&logging_key=830ae5ab8a70a1ce55785342e96f672e806d6f11%3A4404319499",
     "price": "$9.34"
   },
   {
-    "title": "Team Hoodie",
+    "title": "Standard Team Hoodie",
+    "description": "Standard Sized Team 10029 Hoodies - Pickup Only",
     "image": "/images/hoodie_sample.png",
     "etsy": "https://www.etsy.com/listing/4417745100/team-10029-standard-sized-hoodies-pickup?sr_prefetch=1&pf_from=shop_home&ref=shop_home_active_1&frs=1&crt=1&logging_key=a63d48c31bf4f15b85b3ad5e498c15fb9b67927d%3A4417745100",
     "price": "$18.69"
+  },
+  {
+    "title": "Extended Size Team Sweatshirt Crew Neck",
+    "description": "2XL-5XL Team 10029 Crew Neck Sweatshirt - Pickup Only",
+    "image": "/images/extended_sweatshirt_crew_neck_sample.png",
+    "etsy": "https://www.etsy.com/listing/4417883299/extended-sizes-team-10029-crew-neck?ls=r&external=1&rec_type=ss&ref=landingpage_similar_listing_top-8&content_source=31f2ae4ec5387161958eac1f1dafed34%253ALTc69a8a8bd62c6e6f7c26893b2a4c4f025d81d7c4&logging_key=31f2ae4ec5387161958eac1f1dafed34%3ALTc69a8a8bd62c6e6f7c26893b2a4c4f025d81d7c4",
+    "price": "$16.82"
+  },
+  {
+    "title": "Extended Size Team Hoodie",
+    "description": "2XL-5XL Team 10029 Hoodies - Pickup Only",
+    "image": "/images/extended_hoodie_sample.png",
+    "etsy": "https://www.etsy.com/listing/4417748030/team-10029-hoodies-2xl-5xl-pickup-only?ls=r&external=1&rec_type=ss&ref=landingpage_similar_listing_top-2&content_source=31f2ae4ec5387161958eac1f1dafed34%253ALT93d0b1d3eb7759cbdf805cf04b8d10feb4e06bc6&logging_key=31f2ae4ec5387161958eac1f1dafed34%3ALT93d0b1d3eb7759cbdf805cf04b8d10feb4e06bc6",
+    "price": "$23.37"
   }
 ]

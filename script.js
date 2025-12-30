@@ -27,7 +27,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-
 fetch("/products.json")
   .then(res => res.json())
   .then(products => {
@@ -38,13 +37,16 @@ fetch("/products.json")
       card.className = "product-card";
 
       card.innerHTML = `
-        <img src="${prod.image}" alt="${prod.title}">
-        <h3>${prod.title}</h3>
-        <p>${prod.price}</p>
+        <img src="${prod.image}" alt="${prod.title}" loading="lazy">
+        <div class="product-content">
+          <h3>${prod.title}</h3>
+          <p class="product-desc">${prod.description}</p>
+          <div class="product-price">${prod.price}</div>
+        </div>
+        <button class="buy-btn">Buy on Etsy</button>
       `;
 
-      // Redirect to Etsy on click
-      card.addEventListener("click", () => {
+      card.querySelector(".buy-btn").addEventListener("click", () => {
         window.open(prod.etsy, "_blank");
       });
 
